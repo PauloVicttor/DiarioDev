@@ -4,7 +4,7 @@ package com.paulovictor.DiarioDev.controllers;
 import com.paulovictor.DiarioDev.Services.UserService;
 import com.paulovictor.DiarioDev.Services.UserServiceV2;
 import com.paulovictor.DiarioDev.models.User;
-import jakarta.persistence.Cacheable;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

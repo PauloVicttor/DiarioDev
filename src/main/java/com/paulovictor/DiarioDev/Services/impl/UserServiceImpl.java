@@ -1,6 +1,6 @@
 package com.paulovictor.DiarioDev.Services.impl;
 
-// REMOVA: import com.fasterxml.jackson.core.Base64Variant;
+// import com.fasterxml.jackson.core.Base64Variant;
 
 import com.paulovictor.DiarioDev.Services.UserService;
 import com.paulovictor.DiarioDev.models.User;
@@ -24,8 +24,7 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    // CUIDADO: @CircuitBreaker exige dependência Resilience4J
-    // @CircuitBreaker(name = "circuitBreaker")
+
     public User save(final User user) {
         User existingUser = userRepository.findByUsername(user.getName());
 
@@ -34,7 +33,6 @@ public class UserServiceImpl implements UserService {
         }
         String passwordHash = passwordEncoder.encode(user.getPassword());
 
-        // Atenção: Ajuste o construtor do User para aceitar 6 argumentos se necessário
         User entity = new User(user.getUserId(), user.getName(), user.getEmail(), passwordHash, user.getUsername(), user.getRole());
 
         User newUser = userRepository.save(entity);
@@ -66,7 +64,7 @@ public class UserServiceImpl implements UserService {
             userUpdate.setPassword(passwordHash);
             return userRepository.save(userUpdate);
         }
-        return null; // <--- CORREÇÃO: Garante que um valor é retornado se o usuário não for encontrado
+        return null;
     }
 
     @Override

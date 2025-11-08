@@ -38,7 +38,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             Algorithm algorithm = Algorithm.HMAC256("my-secret");
 
             return JWT.create()
-                    .withIssuer("FrameBlog")
+                    .withIssuer("DiarioDev")
                     .withSubject(user.getUsername())
                     .withExpiresAt(getExpirationDate())
                     .sign(algorithm);
@@ -52,7 +52,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             Algorithm algorithm = Algorithm.HMAC256("my-secret");
 
             return JWT.require(algorithm)
-                    .withIssuer("FrameBlog")
+                    .withIssuer("DiarioDev")
                     .build()
                     .verify(token)
                     .getSubject();

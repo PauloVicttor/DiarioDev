@@ -1,6 +1,6 @@
 package com.paulovictor.DiarioDev.Services.impl;
 
-// import com.fasterxml.jackson.core.Base64Variant;
+import com.fasterxml.jackson.core.Base64Variant;
 
 import com.paulovictor.DiarioDev.Services.UserService;
 import com.paulovictor.DiarioDev.models.User;

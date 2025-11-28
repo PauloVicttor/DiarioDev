@@ -2,6 +2,7 @@ package com.paulovictor.DiarioDev.models.v2;
 
 import jakarta.persistence.*;
 
+@Entity
 public class AddressV2 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

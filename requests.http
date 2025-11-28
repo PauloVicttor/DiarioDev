@@ -1,0 +1,19 @@
+### Testar GET ALL - Usuários (Rota Cacheada)
+GET http://localhost:8080/users/getAll
+Accept: application/json
+
+### Testar POST - Criar Novo Usuário
+POST http://localhost:8080/users/save
+Content-Type: application/json
+
+{
+  "name": "Paulo",
+  "email": "Pauloteste@email.com",
+  "password": "12345678",
+  "role": "USER"
+}
+
+### Testar GET por ID (Substitua {id} real)
+GET http://localhost:8080/users/{id}
+Accept-Version: v1
+Accept: application/json
